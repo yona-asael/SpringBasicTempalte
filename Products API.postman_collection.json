@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "1b5525d6-b18c-44ee-a3d8-d53f236ee298",
+		"name": "Products API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET PRODUCTS",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "user",
+						"value": "{{USER}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{PRODUCT_URL}}/",
+					"host": [
+						"{{PRODUCT_URL}}"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "test",
+							"description": "Name of the product",
+							"disabled": true
+						},
+						{
+							"key": "code",
+							"value": "code",
+							"description": "Code will identify the product",
+							"disabled": true
+						},
+						{
+							"key": "arriveDate",
+							"value": "2022-10-05T21:29:22.724Z",
+							"description": "Date the product arrive in the store",
+							"disabled": true
+						},
+						{
+							"key": "status",
+							"value": "0",
+							"description": "Current status of the product",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET PRODUCT",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "user",
+						"value": "{{USER}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{PRODUCT_URL}}/1",
+					"host": [
+						"{{PRODUCT_URL}}"
+					],
+					"path": [
+						"1"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE PRODUCT",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "user",
+						"value": "{{USER}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"test\",\r\n    \"slug\": \"\",\r\n    \"code\": \"code\",\r\n    \"price\": 10.10,\r\n    \"quantity\": 10,\r\n    \"arrive_date\": \"2022-10-05T21:29:22.724Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{PRODUCT_URL}}/",
+					"host": [
+						"{{PRODUCT_URL}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE PRODUCT",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "user",
+						"value": "{{USER}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"test\",\r\n    \"slug\": \"\",\r\n    \"code\": \"code\",\r\n    \"price\": 10.10,\r\n    \"quantity\": 10,\r\n    \"arrive_date\": \"2022-10-05T21:29:22.724Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{PRODUCT_URL}}/1?id=1",
+					"host": [
+						"{{PRODUCT_URL}}"
+					],
+					"path": [
+						"1"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE PRODUCT",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "user",
+						"value": "{{USER}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{PRODUCT_URL}}/1?id=1",
+					"host": [
+						"{{PRODUCT_URL}}"
+					],
+					"path": [
+						"1"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "PROTOCOL",
+			"value": "http"
+		},
+		{
+			"key": "HOST",
+			"value": "localhost"
+		},
+		{
+			"key": "PORT",
+			"value": "8080"
+		},
+		{
+			"key": "BASE_URL",
+			"value": "{{PROTOCOL}}://{{HOST}}:{{PORT}}"
+		},
+		{
+			"key": "PRODUCT_URL",
+			"value": "{{BASE_URL}}/products"
+		},
+		{
+			"key": "USER",
+			"value": "yona"
+		}
+	]
+}
